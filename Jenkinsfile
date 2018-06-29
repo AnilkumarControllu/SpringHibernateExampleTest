@@ -20,17 +20,10 @@ pipeline {
             steps {
                 withMaven(maven : 'maven_3_5_0') {
                     sh 'mvn test'
+					sh 'mvn clean test -Dwebdriver.type=chrome -Dwebdriver.chrome.driver=E:/Workspace/chromedriver.exe'
                 }
             }
         }
-		
-	stage('Run tests') {
-      withMaven(maven: 'Maven 3') {
-          dir('bobcat') {
-            sh 'mvn clean test -Dwebdriver.type=chrome -Dwebdriver.chrome.driver=E:/Workspace/chromedriver.exe'
-          }
-      }
-    }
      stage('Sonar') {
             steps {
                sh "whoami"
