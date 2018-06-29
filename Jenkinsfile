@@ -19,8 +19,8 @@ pipeline {
 
             steps {
                 withMaven(maven : 'maven_3_5_0') {
-                   // sh 'mvn test'
-					sh 'mvn clean test -Dwebdriver.type=chrome -Dwebdriver.chrome.driver=E:/Workspace/chromedriver.exe'
+                    sh 'mvn test'
+					//sh 'mvn clean test -Dwebdriver.type=chrome -Dwebdriver.chrome.driver=E:/Workspace/chromedriver.exe'
                 }
             }
         }
