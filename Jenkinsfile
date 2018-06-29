@@ -35,7 +35,7 @@ pipeline {
      steps{
       //sh "sudo docker stop devops-poc2/pipeline:latest" 
       //sh "sudo docker rm devops-poc2/pipeline:latest" 
-      sh "sudo docker build -t devops-poc2/pipeline:latest ."
+      sh "sudo docker build -t devops-poc3/pipeline:latest ."
       sh "sudo docker-compose up -d"
           }
      }
@@ -50,7 +50,7 @@ pipeline {
                         -p8088:8080 \
                         -v /var/run/docker.sock:/var/run/docker.sock:ro \
                         -e TIMEOUT=30 \
-                        devops-poc2/pipeline:latest
+                        devops-poc3/pipeline:latest
             """                        
            } 
        

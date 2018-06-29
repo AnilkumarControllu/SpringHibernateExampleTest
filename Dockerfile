@@ -9,7 +9,7 @@
 # Maintainer
 #MAINTAINER "acontrollu116@gmail.com""
 # Copy to images tomcat path
-#COPY /target/SpringHibernateExample-1.0-SNAPSHOT.war /home/spring3-mvc-maven-xml-hello-world-1.0-SNAPSHOT.war
+#COPY /target/SpringHibernateExample.war /home/spring3-mvc-maven-xml-hello-world-1.0-SNAPSHOT.war
 
 FROM tomcat:8-jre8-alpine
 
