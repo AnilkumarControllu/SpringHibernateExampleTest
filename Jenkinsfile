@@ -15,17 +15,8 @@ pipeline {
          sh 'mvn clean package -U'
        }
      }
-	 stage ('Testing Stage') {
-
-            steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn test'
-					sh 'mvn clean test -Dwebdriver.base.url=http://www.google.com'
-					//sh 'mvn clean test -Dwebdriver.type=chrome -Dwebdriver.chrome.driver=E:/Workspace/chromedriver.exe'
-                }
-            }
-        }
-     stage('Sonar') {
+	
+		stage('Sonar') {
             steps {
                sh "whoami"
                //sh "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.3.0.603:sonar -Dsonar.host.url=http://sonar-devel.local"
@@ -56,6 +47,17 @@ pipeline {
            } 
        
       }
+	  
+	   stage ('Testing Stage') {
+
+            steps {
+                withMaven(maven : 'maven_3_5_0') {
+                    sh 'mvn test'
+					sh 'mvn clean test -Dwebdriver.base.url=http://www.google.com'
+					//sh 'mvn clean test -Dwebdriver.type=chrome -Dwebdriver.chrome.driver=E:/Workspace/chromedriver.exe'
+                }
+            }
+        }
    
 
   }
